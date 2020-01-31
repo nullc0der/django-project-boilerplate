@@ -1,0 +1,15 @@
+{
+    "project_name": "Django Boilerplate",
+    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_')|replace('.', '_')|trim() }}",
+    "license": [
+        "MIT",
+        "BSD",
+        "GPLv3",
+        "Apache Software License 2.0",
+        "Not open source"
+    ],
+    "project_author": "Prasanta Kakati",
+    "author_email": "prasantakakati1994@gmail.com",
+    "project_description": "A django boilerplate for faster initialization",
+    "docker-project-dir": "django-boilerplate"
+}
