@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{cookiecutter.project_name}}"
+name = "{{cookiecutter.project_name.split()|join('')}}"
 version = "0.1.0"
 description = "{{cookiecutter.project_description}}"
 authors = ["{{cookiecutter.project_author}} <{{cookiecutter.author_email}}>"]
