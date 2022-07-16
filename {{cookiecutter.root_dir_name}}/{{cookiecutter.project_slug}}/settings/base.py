@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
-# TODO: drf, celery
+# TODO: celery
 
 import os
 from pathlib import Path
@@ -185,4 +185,15 @@ CACHES = {
         f':{get_env_var("REDIS_PORT")}/0',
     }
 }
+{ % endif % }
+
+{% if cookiecutter.add_celery == 'Yes' % }
+# Celery
+
+CELERY_BROKER_URL = f'redis://{get_env_var("REDIS_HOST")}' + \
+    f':{get_env_var("REDIS_PORT")}/1'
+CELERY_RESULT_BACKEND = f'redis://{get_env_var("REDIS_HOST")}' + \
+    f':{get_env_var("REDIS_PORT")}/1'
+CELERY_TIMEZONE = 'UTC'
+CELERY_BEAT_SCHEDULE = {}
 { % endif % }
