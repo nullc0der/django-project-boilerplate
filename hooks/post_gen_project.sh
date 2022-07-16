@@ -10,6 +10,10 @@ poetry add sentry-sdk
 {% if cookiecutter.add_drf == "Yes" %}
 poetry add djangorestframework
 {% endif %}
+{% if cookiecutter.add_drf == "No" %}
+rm -rf {{cookiecutter.project_slug}}/api_urls.py
+rm -rf {{cookiecutter.project_slug}}/routers.py
+{% endif %}
 {% if cookiecutter.add_celery == "Yes" %}
 poetry add celery
 {% endif %}
