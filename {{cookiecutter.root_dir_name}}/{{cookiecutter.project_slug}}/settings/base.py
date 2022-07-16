@@ -38,7 +38,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 DJANGO_APPS = [
@@ -50,11 +49,14 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
+{% if cookiecutter.add_drf == "Yes" -%}
 THIRD_PARTY_APPS = [
-    {% if cookiecutter.add_drf == "Yes" %}
     'rest_framework',
-    {% endif %}
 ]
+{%- endif -%}
+{%- if cookiecutter.add_drf == "No" -%}
+THIRD_PARTY_APPS = []
+{%- endif %}
 
 PROJECT_APPS = []
 
@@ -162,7 +164,7 @@ SITE_TYPE = get_env_var('SITE_TYPE')
 # Example use: We can use host url in email templates
 
 HOST_URL = get_env_var('HOST')
-{% if cookiecutter.add_email_settings == 'Yes' % }
+{% if cookiecutter.add_email_settings == 'Yes' %}
 # Email Server Config
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -171,9 +173,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = get_env_var('DJANGO_EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = get_env_var('DJANGO_EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
-{% endif - %}
-
-{% if cookiecutter.add_redis_cache == 'Yes' % }
+{% endif %}
+{%- if cookiecutter.add_redis_cache == 'Yes' %}
 # Cache
 
 CACHES = {
@@ -183,9 +184,8 @@ CACHES = {
         f':{get_env_var("REDIS_PORT")}/0',
     }
 }
-{ % endif % }
-
-{% if cookiecutter.add_celery == 'Yes' % }
+{% endif %}
+{%- if cookiecutter.add_celery == 'Yes' %}
 # Celery
 
 CELERY_BROKER_URL = f'redis://{get_env_var("REDIS_HOST")}' + \
@@ -194,4 +194,4 @@ CELERY_RESULT_BACKEND = f'redis://{get_env_var("REDIS_HOST")}' + \
     f':{get_env_var("REDIS_PORT")}/1'
 CELERY_TIMEZONE = 'UTC'
 CELERY_BEAT_SCHEDULE = {}
-{ % endif % }
+{%- endif %}

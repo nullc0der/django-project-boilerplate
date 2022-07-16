@@ -24,9 +24,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    {% if cookiecutter.add_drf == "Yes" %}
+    {% if cookiecutter.add_drf == "Yes" -%}
     path('api/v1/', include('{{cookiecutter.project_slug}}.api_urls')),
-    {% endif %}
+    {%- endif %}
 ]
 
 if settings.DEBUG:

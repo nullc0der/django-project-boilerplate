@@ -1,9 +1,8 @@
-{% if cookiecutter.add_sentry == 'Yes' %}
+{%- if cookiecutter.add_sentry == 'Yes' -%}
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-{% endif %}
+{% endif -%}
 from .base import *
-
 
 DEBUG = False
 
@@ -41,7 +40,7 @@ X_FRAME_OPTIONS = 'DENY'
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-{% if cookiecutter.add_sentry == 'Yes' %}
+{% if cookiecutter.add_sentry == 'Yes' -%}
 sentry_sdk.init(
     dsn=get_env_var("SENTRY_DSN"),
     integrations=[DjangoIntegration()],
@@ -61,4 +60,4 @@ sentry_sdk.init(
     # something more human-readable.
     # release="myapp@1.0.0",
 )
-{% endif %}
+{%- endif %}
