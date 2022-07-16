@@ -5,6 +5,7 @@ import sys
 
 
 def main():
+    """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE',
                           '{{cookiecutter.project_slug}}.settings.development')
     try:

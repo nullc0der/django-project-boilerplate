@@ -1,8 +1,6 @@
 {
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.pythonPath": "",
-    "python.venvPath": "",
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -12,6 +10,6 @@
         "**/*.pyc": true,
         "**/__pycache__": true
     },
-    "editor.formatOnPaste": true,
-    "editor.formatOnSave": true
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false
 }

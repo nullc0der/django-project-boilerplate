@@ -13,5 +13,8 @@
     "author_email": "prasantakakati1994@gmail.com",
     "project_description": "A django boilerplate for faster initialization",
     "docker_project_dir": "{{ cookiecutter.project_name.lower()|replace(' ', '-')|replace('.', '-')|trim() }}",
-    "email_settings_needed": ["Yes", "No"]
+    "add_email_settings": ["Yes", "No"],
+    "database_backend": ["postgresql", "mysql"],
+    "add_redis_cache": ["Yes", "No"],
+    "add_sentry": ["Yes", "No"]
 }

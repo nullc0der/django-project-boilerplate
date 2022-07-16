@@ -6,16 +6,15 @@ authors = ["{{cookiecutter.project_author}} <{{cookiecutter.author_email}}>"]
 license = "{{cookiecutter.license}}"
 
 [tool.poetry.dependencies]
-python = "^3.7"
-django = "^3.0.2"
-uwsgi = "^2.0.18"
+python = "^3.8"
+django = "^4.0.6"
+uwsgi = "^2.0.20"
 
 [tool.poetry.dev-dependencies]
 pep8 = "^1.7.1"
-autopep8 = "^1.5"
-ipython = "^7.11.1"
-flake8 = "^3.7.9"
-python-language-server = {extras = ["all"], version = "^0.31.7"}
+autopep8 = "^1.6.0"
+ipython = "^8.4.0"
+flake8 = "^4.0.1"
 
 [build-system]
 requires = ["poetry>=0.12"]
