@@ -16,5 +16,6 @@
     "add_email_settings": ["Yes", "No"],
     "database_backend": ["postgresql", "mysql"],
     "add_redis_cache": ["Yes", "No"],
-    "add_sentry": ["Yes", "No"]
+    "add_sentry": ["Yes", "No"],
+    "add_drf": ["Yes", "No"]
 }

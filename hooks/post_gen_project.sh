@@ -7,3 +7,6 @@ poetry install
 {% if cookiecutter.add_sentry == "Yes" %}
 poetry add sentry-sdk
 {% endif %}
+{% if cookiecutter.add_drf == "Yes" %}
+poetry add djangorestframework
+{% endif %}

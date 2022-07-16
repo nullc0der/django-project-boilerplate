@@ -52,7 +52,11 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
-THIRD_PARTY_APPS = []
+THIRD_PARTY_APPS = [
+    {% if cookiecutter.add_drf == "Yes" %}
+    'rest_framework',
+    {% endif %}
+]
 
 PROJECT_APPS = []
 
