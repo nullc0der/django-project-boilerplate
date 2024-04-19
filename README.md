@@ -4,5 +4,5 @@
 
 ```
     pip install cookiecutter
-    cookiecutter git@github.com:c0defreak/django-project-boilerplate.git
+    cookiecutter git@github.com:nullc0der/django-project-boilerplate.git
 ```
